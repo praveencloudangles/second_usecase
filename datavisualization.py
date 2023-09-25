@@ -18,6 +18,13 @@ for col in final_df_copy.columns:
 # print("categorical values-------", categ)
 # print("numerical values---------", numer)
 
+for x in numer:
+        q75,q25 = np.percentile(final_df_copy.loc[:,x],[75,25])
+        intr_qr = q75-q25    
+        max = q75+(1.5*intr_qr)
+        min = q25-(1.5*intr_qr)    
+        final_df_copy.loc[final_df_copy[x] < min,x] = np.nan
+        final_df_copy.loc[final_df_copy[x] > max,x] = np.nan
 
 # Box plot for numerical values.
 for num in numer:
