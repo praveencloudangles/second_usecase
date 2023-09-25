@@ -3,6 +3,7 @@ print("data visualization")
 from data_cleaning import final_df
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 final_df_copy = final_df.copy()
 
