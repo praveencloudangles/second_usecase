@@ -13,7 +13,7 @@ column_types = final_copy.dtypes
 print(column_types)
 
 
-columns_to_encode = ['name', 'selling_price', 'fuel', 'seller_type', 'transmission', 'owner']
+columns_to_encode = ['name', 'selling_price', 'fuel', 'seller_type', 'transmission', 'owner', 'year', 'km_driven']
 for col in columns_to_encode:
     final_copy[col] = label_encoder.fit_transform(final_copy[col])
 
