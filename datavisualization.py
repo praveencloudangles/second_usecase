@@ -20,7 +20,6 @@ a =[]
 def data_visu():
     final_df = data_cleaning()
     dataset = final_df.copy()
-    data = feat_eng()
 
     categ = []
     numer = []
@@ -71,7 +70,7 @@ def data_visu():
     #     # fig.show()
     #     fig.write_image(f"{i}_displot.jpg")
     #     # a.append(fig)
-    
+    data=feat_eng()
     df=data.drop("selling_price",axis=1)
     y=df.corr().columns.tolist()
     z=df.corr().values.tolist()
