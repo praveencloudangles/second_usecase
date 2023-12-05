@@ -1,3 +1,8 @@
-from feature_engineering import final_df
+from feature_engineering import feat_eng
 
-final_df =final_df.to_csv('final.csv', index=False)
+def prep_data():
+
+    final_df =final_df.to_csv('final.csv', index=False)
+
+    return final_df
+prep_data()
