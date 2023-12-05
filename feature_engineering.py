@@ -23,6 +23,8 @@ def feat_eng():
     final_df = final_copy
     print(final_df)
 
+    final_df =final_df.to_csv('final.csv', index=False)
+
     return final_df
 
 feat_eng()
