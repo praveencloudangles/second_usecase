@@ -2,8 +2,9 @@ print("data visualization")
 
 from data_cleaning import data_cleaning
 import pandas as pd
+from feature_engineering import feat_eng
 import plotly.express as px
-from IPython.display import Image
+# from IPython.display import Image
 import warnings
 warnings.filterwarnings("ignore")
 import numpy as np
@@ -19,6 +20,7 @@ a =[]
 def data_visu():
     final_df = data_cleaning()
     dataset = final_df.copy()
+    data = feat_eng()
 
     categ = []
     numer = []
@@ -70,7 +72,7 @@ def data_visu():
     #     fig.write_image(f"{i}_displot.jpg")
     #     # a.append(fig)
     
-    df=dataset.drop("selling_price",axis=1)
+    df=data.drop("selling_price",axis=1)
     y=df.corr().columns.tolist()
     z=df.corr().values.tolist()
     z_text = np.around(z, decimals=4) # Only show rounded value (full value on hover)
